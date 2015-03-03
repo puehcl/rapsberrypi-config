@@ -12,13 +12,14 @@ def read_credentials(credentials_file):
 
 def upload_pictures(local_folder, remote_folder, host, username, password):
     ssh = paramiko.SSHClient()
-	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(host, 22, username=username, password=password)
     sftp = ssh.open_sftp()
     for file in os.listdir(local_folder):
         if file.endswith(".jpg"):
             full_name = os.path.join(local_folder, file)
-            sftp.put(full_path, remote_folder)
+            full_remote_name = os.path.join(remote_folder, file)
+            sftp.put(full_name, full_remote_name)
             os.remove(full_name)
 
 
