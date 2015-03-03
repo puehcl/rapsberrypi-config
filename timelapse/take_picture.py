@@ -8,7 +8,7 @@ TIMESTAMP_FORMAT = "%Y-%m-%d %H-%M-%S"
 
 def get_timestamp():
     now = time.time()
-    return datetime.datetime.fromtimestamp(ts).strftime(TIMESTAMP_FORMAT)
+    return datetime.datetime.fromtimestamp(now).strftime(TIMESTAMP_FORMAT)
 
 def get_output_path(base_dir, filename):
     return os.path.join(base_dir, filename)
