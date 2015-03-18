@@ -16,7 +16,7 @@ function as_user {
 }
 
 #make timelapse.sh executable
-as_user "chmod -x timelapse.sh"
+as_user "chmod +x timelapse.sh"
 #create local directory as user pi
 as_user "mkdir -p $LOCAL_PHOTO_DIR"
 
