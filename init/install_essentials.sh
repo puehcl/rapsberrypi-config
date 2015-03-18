@@ -6,6 +6,8 @@ echo "alias fucking='sudo'" >> $HOME/.bashrc
 source $HOME/.bashrc
 
 #install essential packages
+apt-get install vim
+#python
 apt-get update
 apt-get install python-dev
 apt-get install python-setuptools
