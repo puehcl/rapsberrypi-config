@@ -1,4 +1,6 @@
 
+.PHONY: all init timelapse
+
 all: init timelapse
 
 init:
