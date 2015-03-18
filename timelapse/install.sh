@@ -15,10 +15,11 @@ function as_user {
     su $DEFAULT_USER $1
 }
 
-#make timelapse.sh executable
+#make timelapse.sh and cronjob.sh executable
 as_user "chmod +x timelapse.sh"
+as_user "chmod +x cronjob.sh"
 #create local directory as user pi
 as_user "mkdir -p $LOCAL_PHOTO_DIR"
 
 #install a cronjob for the timelapse
-as_user "(crontab -l ; echo "$CRONJOB_LINE") | sort - | uniq - | crontab -"
+as_user "cronjob.sh $CRONJOB_LINE"
