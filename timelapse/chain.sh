@@ -1,9 +1,0 @@
-#!/bin/bash
-LOCAL_PICTURE_DIR=$1
-REMOTE_PICTURE_DIR=$2
-CREDENTIALS_FILE=$3
-
-CALL_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
-python $CALL_DIR/take_picture.py $LOCAL_PICTURE_DIR
-python $CALL_DIR/upload_picture.py $LOCAL_PICTURE_DIR $REMOTE_PICTURE_DIR $CREDENTIALS_FILE

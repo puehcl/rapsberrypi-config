@@ -8,7 +8,8 @@ def read_credentials(credentials_file):
         host = cf.readline()[:-1] #cut away newline
         user = cf.readline()[:-1]
         password = cf.readline()[:-1]
-        return host, user, password
+        remote_folder = cf.readline()[:-1]
+        return host, user, password, remote_folder
 
 def upload_pictures(local_folder, remote_folder, host, username, password):
     ssh = paramiko.SSHClient()
@@ -25,7 +26,6 @@ def upload_pictures(local_folder, remote_folder, host, username, password):
 
 if __name__ == "__main__":
     local_folder = sys.argv[1]
-    remote_folder = sys.argv[2]
-    credentials_file = sys.argv[3]
-    host, username, password = read_credentials(credentials_file)
+    credentials_file = sys.argv[2]
+    host, username, password, remote_folder = read_credentials(credentials_file)
     upload_pictures(local_folder, remote_folder, host, username, password)
