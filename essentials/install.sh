@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$(id -u)" != "0" ]; then
+    echo "You need to be root to run this script"
+    exit 1
+fi 
+
 #setup environment
 #essential alias for human interaction with the system
 echo "alias fucking='sudo'" >> $HOME/.bashrc
