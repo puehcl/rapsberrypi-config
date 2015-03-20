@@ -1,11 +1,11 @@
 
-.PHONY: all init timelapse
+.PHONY: all essentials timelapse
 
-all: init timelapse
+all: essentials timelapse
 
-init:
-	chmod +x init/install_essentials.sh
-	init/install_essentials.sh
+essentials:
+	chmod +x essentials/install.sh
+	essentials/install.sh
 
 timelapse:
 	chmod +x timelapse/install.sh
